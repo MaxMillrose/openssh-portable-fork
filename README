@@ -1,6 +1,8 @@
 My personal fork of the portable version of OpenSSH.
-No idea, what I am going to do with it though.
 
+Some changes so far:
+- new default prefix is "/opt/local/sshd-fork"
+- client stuff is mostly removed (for example no ssh-client)
 
 How to build & install
 1. run "autoreconf" to create the necessary files for configure
