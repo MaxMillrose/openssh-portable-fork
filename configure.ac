@@ -13,7 +13,11 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-AC_INIT([OpenSSH], [Portable], [openssh-unix-dev@mindrot.org])
+
+# By default, configure sets the prefix for files it installs to /usr/local.
+# We don't want that and hence we change it to /opt
+ac_default_prefix=/opt/local
+AC_INIT([OpenSSH], [Portable-Fork], [max.millrose@gmail.com])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([ssh.c])
 
@@ -2042,9 +2046,9 @@ AC_ARG_ENABLE([pkcs11],
 	]
 )
 
-disable_sk=
+disable_sk=1
 AC_ARG_ENABLE([security-key],
-	[  --disable-security-key  disable U2F/FIDO support code [no]],
+	[  --disable-security-key  disable U2F/FIDO support code [yes]],
 	[
 		if test "x$enableval" = "xno" ; then
 			disable_sk=1
@@ -5588,6 +5592,9 @@ AC_CONFIG_FILES([Makefile buildpkg.sh opensshd.init openssh.xml \
 	survey.sh])
 AC_OUTPUT
 
+# We define our own Default prefix. User can still change via --prefix at configure stage
+AC_PREFIX_DEFAULT(/opt/local/sshd-fork)
+
 # Print summary of options
 
 # Someone please show me a better way :)
@@ -5689,3 +5696,4 @@ if test "$AUDIT_MODULE" = "bsm" ; then
 	echo "WARNING: BSM audit support is currently considered EXPERIMENTAL."
 	echo "See the Solaris section in README.platform for details."
 fi
+
