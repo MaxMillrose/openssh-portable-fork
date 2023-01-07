@@ -1,3 +1,13 @@
+My personal fork of the portable version of OpenSSH.
+No idea, what I am going to do with it though.
+
+
+How to build & install
+1. run "autoreconf" to create the necessary files for configure
+2. run "./configure" to create the files for make
+3. run "make" to actually make (compile) the project 
+4. run "make install" to install the project on our computer (Linux and perhaps Mac - no idea about Windows)
+
 See https://www.openssh.com/releasenotes.html#9.1p1 for the release notes.
 
 Please read https://www.openssh.com/report.html for bug reporting
@@ -17,7 +27,7 @@ and Dug Song. It has a homepage at https://www.openssh.com/
 This port consists of the re-introduction of autoconf support, PAM
 support, EGD/PRNGD support and replacements for OpenBSD library
 functions that are (regrettably) absent from other unices. This port
-has been best tested on AIX, Cygwin, HP-UX, Linux, MacOS/X,
+has been best tested on AIX, Cygwin, HP-UX, Linux, MacOS/X,h
 FreeBSD, NetBSD, OpenBSD, OpenServer, Solaris and UnixWare.
 
 This version actively tracks changes in the OpenBSD CVS repository.
