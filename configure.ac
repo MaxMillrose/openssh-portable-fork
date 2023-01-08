@@ -5593,7 +5593,7 @@ AC_CONFIG_FILES([Makefile buildpkg.sh opensshd.init openssh.xml \
 AC_OUTPUT
 
 # We define our own Default prefix. User can still change via --prefix at configure stage
-AC_PREFIX_DEFAULT(/opt/local/sshd-fork)
+AC_PREFIX_DEFAULT($PWD/OPT/local/sshd-fork)
 
 # Print summary of options
 
